@@ -1,0 +1,20 @@
+  estudar as funções do contrato do toxicskulls https://etherscan.io/address/0x282a7d13152b3f51a3e31d46a2ca563f8554d85d#code
+
+[
+  "0xB4D6AA959aA586E49f54D18FEE796CF2E347654B",
+  "0x8fC62b69e8ec2046CF80BD1F0b19278F8d067CDc",
+  "0x19A498B49697A87bBaeF8A188029EDd615b39258"
+]
+
+  subir contrato OK 
+  tirar contrato do estado de pausa OK
+  iniciar processo de airdrop OK
+  ativar whitelist OK
+  inserir carteiras whitelist OK
+  teste processo de compra whitelist OK
+  desativar whitelist/ venda publica OK
+  teste de venda publica OK
+  revelação de nft OK
+  transferencia de nft OK
+  
+// Testes Concluidos !

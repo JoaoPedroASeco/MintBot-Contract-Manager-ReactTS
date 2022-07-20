@@ -1,78 +1,31 @@
 // SPDX-License-Identifier: MIT
-// Caramelo Club - 2022
+// Native Aliens
 
 pragma solidity >=0.8.0 <0.9.0;
-
-/*                                                                                             
-                                                              ,@@@@@@@@@@@@                          
-                                                      %%%%@@@@&\**********((\%%%.                
-                                                    \@\*************************,,,@@@@@@           
-                                                    @%*******************%@@@@@@@***,,,,,,@@@@@@@@@@@
-                                                  @@***\(((*************@@@@@@@  @%*********(\*,,@@@@
-                                                  @@*\(((*****(@(********%@@@@@@@*******((*******,,@@
-                                                @@***\(******\(@(***************************\****\@@
-                                              @@@@*********@@((******************************&@@@    
-                                            #@((((@@***@@@@((***********************@@@@@@@@@*       
-                                        %#(\***((@@%%%((\****************%%%%*****.                
-                                      @@*******(((((((******************%@                          
-                                    @@***********(((\******************@\                           
-                                  %@*********************************@@                             
-                                *@(********************************,,@@                             
-                                @&**********************************,,@@                             
-                              @@************************************,,@@                             
-                              @@************************************,,,*@\                           
-                            ##%%**************************************,,(##                          
-                            @@((****************************************,#@                          
-          @@                @@((****************************************,,,@@                        
-        @@**@@            @@((********************************************,@@                        
-        @@***\@\          @@((********************************************,@@                        
-        @@***\@\        \@((**********************************************,@@                        
-        @@*****%@       \@((**********************************************,@@                        
-          @@*****@@     \@((**********************************************,@@                        
-          \%#*****%%(((#%((**********************************************,@@                        
-            .@%(((((((@%(((**********************************************,@@@@                      
-              #@((((((@%(((*********@@***********************************,@@**@@                    
-                  @@@@@%(((*********@@((**********************************@@**@@                    
-                    @@@%(((((*******@@((***************************@@*****@@**@@                    
-                    @@@%(((((*******@@((*****@@********************@@*****@@**@@                    
-    .,,,,,           @@(%@(((((((((((@@((*****@@****************\(@@@@*****@@@@                      
-  ,,,,,,,,,,,,,,,,,,@@(((@@(((((((&@@@((*****@@((((((((((((((((&@@@@@****,@@,,@@                    
-  ..,,,,,,,,,,,,,,,,##%#(%%%%((((%@@@@((*****@@################*,**@@****,@@**,,@#                  
-      .,,,,,,,,,,,,,,,,@%*((@@@@@@@\*@@((*****@@*****************,**@@****,@@@@@@@#                  
-        ,,,,,,,,,,,,,,,*#@**(((((#@\*@@((*****@@*,***************,**@@****,@@,,,,,.                  
-              ,,,,,,,,,,,,**@@**(((((@@((*****@@*****************,**@@*****@@                        
-                ,,,,,,,,,**@@*****\(@@((*****@@*****************,**@@*****@@,,                      
-                    ,,,,,,,**@@@@@@@@@((*****@@*****************,**@@*******@@,,                    
-                          ,,,,,,,,,,*@@*******@@*,***,,,,,,,,,,,,,,,@@((@%(@@,,@@,.                  
-                            ,,,,,,,,*@@*******@@**,,,,,,,,,,,,,,,,,,,,@@@@@@@@@,,,.                  
-                              ,,,,,,,@@**@@*%@**@@,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,                    
-                                ,,,,,,,@@@@@@@@@,,,,,,,,,,,,,,,,,,,,,,,,,,,,,                        
-                                .,,,,,,,,,,,,,,,,,,,,, 
-*/
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract CarameloClub is ERC721Enumerable, Ownable {
+contract NativeAliens is ERC721Enumerable, Ownable {
   using Strings for uint256;
 
   string public baseURI;
   string public baseExtension = ".json";
   string public notRevealedUri;
-  uint256 public cost = 0.07 ether;
-  uint256 public costPre = 0.05 ether;
+  uint256 public cost = 0.4 ether;
+  uint256 public costPre = 0.4 ether;
   uint256 public maxSupply = 10000;
-  uint256 public maxMintAmount = 3;
+  uint256 public maxMintAmount = 5;
   bool public paused = true;
   bool public revealed = false;
-  uint256 public nftPerAddressLimit = 3;
+  uint256 public nftPerAddressLimit = 5;
   bool public onlyWhitelisted = true;
   address[] public whitelistedAddresses;
   mapping(address => uint256) public addressMintedBalance;
 
-  constructor() ERC721("Caramelo Club", "CARAMELO") {}
+  constructor() ERC721("Native Aliens", "NA") {}
 
   function _baseURI() internal view virtual override returns (string memory) {
     return baseURI;
@@ -173,7 +126,7 @@ contract CarameloClub is ERC721Enumerable, Ownable {
     maxSupply = _newMaxSupply;
   }
   
-  function setmaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner {
+  function setMaxMintAmount(uint256 _newmaxMintAmount) public onlyOwner {
     maxMintAmount = _newmaxMintAmount;
   }
 

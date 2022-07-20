@@ -31,7 +31,7 @@ export const MainMint = () => {
                         <h2>Handle Mint: {whitelistState ? 'PreSale is ON' : 'PublicSale is ON'}</h2>
                         <div>
                             <button onClick={handleDecrement}>-</button>
-                            <input type="number" value={mintAmount} />
+                            <input className="text-black" type="number" value={mintAmount} />
                             <button onClick={handleIncrement}>+</button>
                         </div>
                         <button onClick={handleMint} className='mb-2'>Mint Now</button>
@@ -43,7 +43,7 @@ export const MainMint = () => {
                         handleSetWhitelistUsers(e.target._users.value)
                     }}>
                         <h2>Set Users On Whitelist</h2>
-                        <input type="text" name="_users"/>
+                        <input className="text-black" type="text" name="_users"/>
                         <button type="submit">Set users in Whitelist</button>
                     </form>
 
@@ -52,7 +52,7 @@ export const MainMint = () => {
                         handleCheckIsWhitelisted(e.target._wallet.value)
                     }}>
                         <h2>Check if you are Whitelisted</h2>
-                        <input type="text" name="_wallet"/>
+                        <input className="text-black" type="text" name="_wallet"/>
                         <button type="submit">check if you are whitelisted</button>
                     </form>
 
@@ -64,8 +64,8 @@ export const MainMint = () => {
                          })
                     }}>
                         <h2>Gift</h2>
-                        <input type="text" name="_quantity"/>
-                        <input type="text" name="_address"/>
+                        <input className="text-black" type="text" name="_quantity"/>
+                        <input className="text-black" type="text" name="_address"/>
                         <button type="submit">Gift</button>
                     </form>
 

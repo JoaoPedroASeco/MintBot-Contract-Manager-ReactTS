@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { ethers, BigNumber } from "ethers"
 import ContractABI from '../ContractABI.json'
-const ContractAddress = "0x40db304D343A151a6f247a9E53BFa9CFDe523a31"
+const ContractAddress = "0x65bE62BaAff68113428E0E96A74320549Ac1dfA5"
 
 export type BlockchainContextProps = {
     children: ReactNode

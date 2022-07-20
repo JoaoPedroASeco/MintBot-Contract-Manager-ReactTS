@@ -27,6 +27,10 @@ module.exports = {
       url: process.env.REACT_APP_RINKEBY_RPC_URL,
       accounts: [process.env.REACT_APP_PRIVATE_KEY],
     },
+    mainNet: {
+      url: process.env.REACT_APP_MAINNET_RPC_URL,
+      accounts: [process.env.REACT_APP_PRIVATE_KEY],
+    },
   },
   etherscan: {
     apiKey: process.env.REACT_APP_ETHERSCAN_KEY,

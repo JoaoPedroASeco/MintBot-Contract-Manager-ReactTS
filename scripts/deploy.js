@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 
 async function main() {
-  const DefaultContract = await hre.ethers.getContractFactory("CarameloClub");
+  const DefaultContract = await hre.ethers.getContractFactory("NativeAliens");
   const defaultContract = await DefaultContract.deploy();
 
   await defaultContract.deployed();
